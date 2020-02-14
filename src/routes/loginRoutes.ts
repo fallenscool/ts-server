@@ -24,8 +24,13 @@ router.get('/login', (req: RequestWithBody, res: Response) => {
 
 router.post('/login', (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
-  // If email is defined return uppercase email else return text string
-  res.send(email?.toUpperCase() || 'You must provide an email!');
+
+  if (email && password && email === 'hi@hi.com' && password === 'password') {
+    // mark thi s person as logged in
+    //redirect them to rhe root route
+  } else {
+    res.send('Invalid email or password');
+  }
 });
 
 export { router };
