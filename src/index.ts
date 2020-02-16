@@ -5,6 +5,7 @@ import cookieSession from 'cookie-session';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieSession({ keys: ['asdasd'] }));
 app.use(router);
 
 app.listen(3333, () => {
